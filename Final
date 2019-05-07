@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+int
+main ()
+{
+  int classnum, i;
+  double numgrade, gpa, credithrs, totnumgrade, totcredithrs;
+  
+  totnumgrade= 0.0;
+
+  cout << "This GPA calculator will take your numerical grades \n";
+  cout << "and credit hours for your current semester and then tell you your gpa \n";
+  
+  cout << "\n";
+  
+  cout << "Please enter number of classes your taking this semester ";
+  cin >> classnum;
+
+  for (i = 1; i <= classnum; i++)
+    {
+      cout << "Please enter your credit hours for class " << i << endl;
+      cin >> credithrs;
+     totcredithrs = totcredithrs + credithrs;
+
+      cout << "Please enter your numerical grade for class " << i << endl;
+      cin >> numgrade;
+
+     if(numgrade >= 93 && numgrade <= 100)
+	totnumgrade = totnumgrade + (4 * credithrs);
+
+     if (numgrade >= 90 && numgrade <= 92)
+	totnumgrade = totnumgrade + (3.7 * credithrs);
+
+     if (numgrade >= 87 && numgrade <= 89)
+	totnumgrade = totnumgrade + (3.3 * credithrs);
+
+     if (numgrade >= 83 && numgrade <= 86)
+	totnumgrade = totnumgrade + (3 * credithrs);
+
+     if (numgrade >= 80 && numgrade <= 82)
+	totnumgrade = totnumgrade + (3.7 * credithrs);
+
+     if (numgrade >= 77 && numgrade <= 79)
+	totnumgrade = totnumgrade + (2.3 * credithrs);
+
+     if (numgrade >= 73 && numgrade <= 76)
+	totnumgrade = totnumgrade + (2 * credithrs);
+
+     if (numgrade >= 70 && numgrade <= 72)
+	totnumgrade = totnumgrade + (1.7 * credithrs);
+
+     if (numgrade >= 67 && numgrade <= 69)
+	totnumgrade = totnumgrade + (1.3 * credithrs);
+
+     if (numgrade >= 65 && numgrade <= 66)
+	totnumgrade = totnumgrade + (1 * credithrs);
+
+     if (numgrade >= 60 && numgrade <= 64)
+	totnumgrade = totnumgrade + (0.67 * credithrs);
+	
+	if (numgrade >= 0 && numgrade <= 59)
+	totnumgrade = totnumgrade + (0.0 * credithrs);
+    }
+
+    gpa = totnumgrade / totcredithrs    ;
+      cout<<"Your GPA is "<< gpa << endl; 
+}
+
